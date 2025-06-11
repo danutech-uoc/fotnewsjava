@@ -19,6 +19,8 @@ Some updates are coming soon, and there may be occasional errors in the app duri
 
 ## Project Structure
 ![image](https://github.com/user-attachments/assets/b6b16e35-2199-46dd-8a0f-0aeeacf56a63)
+![image](https://github.com/user-attachments/assets/dfacaf78-d382-422f-8570-3faf475c7b2d)
+
 
 
 ## Installation
