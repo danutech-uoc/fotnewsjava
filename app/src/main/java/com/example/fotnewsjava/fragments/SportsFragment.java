@@ -1,5 +1,6 @@
 package com.example.fotnewsjava.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fotnewsjava.ArticleDetailActivity;
 import com.example.fotnewsjava.R;
 import com.example.fotnewsjava.adapters.ArticleAdapter;
 import com.example.fotnewsjava.models.Article;
@@ -121,17 +123,16 @@ public class SportsFragment extends Fragment implements ArticleAdapter.OnReadMor
 
     @Override
     public void onReadMoreClick(Article article) {
-        ArticleDetailFragment detailFragment = ArticleDetailFragment.newInstance(
-                article.getTitle(),
-                article.getDate(),
-                article.getSummary(),
-                article.getImageUrl()
-        );
+        // Create an Intent to navigate to ArticleDetailActivity
+        Intent intent = new Intent(getContext(), ArticleDetailActivity.class);
 
-        requireActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragmentContainer, detailFragment)
-                .addToBackStack(null)
-                .commit();
+        // Passing the article data to ArticleDetailActivity
+        intent.putExtra("title", article.getTitle());
+        intent.putExtra("date", article.getDate());
+        intent.putExtra("fullSummary", article.getFullSummary()); // Full summary instead of short summary
+        intent.putExtra("imageUrl", article.getImageUrl());
+
+        // Start ArticleDetailActivity
+        startActivity(intent);
     }
 }
