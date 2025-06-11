@@ -20,12 +20,14 @@ Some updates are coming soon, and there may be occasional errors in the app duri
 ## Project Structure
 ![image](https://github.com/user-attachments/assets/b6b16e35-2199-46dd-8a0f-0aeeacf56a63)
 
+
 ## Installation
 
 ### Prerequisites
-- Node.js (>=14.x)
-- npm or yarn
-- Firebase account and Firebase SDK
+- Java (>=8)
+- Firebase account and Firebase SDK for Java
+- Android Studio (for developing and testing the Android app)
+- Gradle (for managing dependencies in the Android project)
 
 ### Setup
 1. Clone the repository:
@@ -34,26 +36,19 @@ Some updates are coming soon, and there may be occasional errors in the app duri
     cd fotnewsjava
     ```
 
-2. Install the dependencies:
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
+2. Install the dependencies (for Android Studio projects, dependencies are managed via Gradle):
+    - Open the project in Android Studio, and Gradle will automatically resolve dependencies.
 
 3. Configure Firebase:
     - Go to [Firebase Console](https://console.firebase.google.com/).
     - Create a new project.
-    - Add Firebase SDK to the project.
+    - Add Firebase SDK for Android to the project.
     - Set up Firebase Realtime Database.
-    - Download the Firebase configuration and place it in `/src/firebase/config.js`.
+    - Download the Firebase configuration file (`google-services.json`) and add it to the `/app` directory of your project.
 
 4. Run the app:
-    ```bash
-    npm start
-    # or
-    yarn start
-    ```
+    - Open the project in Android Studio.
+    - Build and run the app using the Android Emulator or a physical device.
 
 ## Admin App Setup
 For the admin interface, you can use the following repository:
@@ -65,21 +60,14 @@ For the admin interface, you can use the following repository:
     cd fotadmin
     ```
 
-2. Install the dependencies:
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
+2. Install the dependencies (for Android Studio projects, dependencies are managed via Gradle):
+    - Open the project in Android Studio, and Gradle will automatically resolve dependencies.
 
 3. Follow the same Firebase setup steps mentioned earlier to configure the Firebase Realtime Database.
 
 4. Run the app:
-    ```bash
-    npm start
-    # or
-    yarn start
-    ```
+    - Open the project in Android Studio.
+    - Build and run the app using the Android Emulator or a physical device.
 
 ## Usage
 - **Admin App**: Admin users can add, update, and delete news articles.
