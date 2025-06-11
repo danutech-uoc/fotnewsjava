@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,142 +9,129 @@
     android:gravity="center_horizontal">
 
     <!-- Profile Icon Circle -->
-    <View
+    <ImageView
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_marginBottom="24dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/profile" />
+        android:src="@drawable/profile"
+        android:scaleType="centerCrop" />
 
     <!-- User Information Container -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="429dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="#C5D1F8"
         android:clipToOutline="true"
-        android:clipToPadding="false"
-        android:elevation="4dp"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:elevation="4dp">
 
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"
             android:text="User Information"
             android:textColor="#000000"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
 
         <!-- Buttons Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:layout_marginBottom="20dp">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnEdit"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="12dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_dark_rounded"
                 android:text="Edit Details"
-                android:textColor="@color/whitetext" />
+                android:textColor="@color/whitetext"
+                android:layout_marginEnd="12dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSave"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_dark_rounded"
-                android:enabled="false"
                 android:text="Save"
-                android:textColor="@color/whitetext" />
+                android:textColor="@color/whitetext"
+                android:enabled="false"/>
         </LinearLayout>
 
         <!-- Input Fields Container -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="204dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:background="@drawable/rounded_inner_container"
             android:clipToOutline="true"
-            android:orientation="vertical"
             android:padding="12dp">
 
-            <!-- Username Label -->
+            <!-- Username -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="4dp"
                 android:text="Username"
                 android:textColor="#000000"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"/>
 
-            <!-- Username EditText -->
             <EditText
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/rounded_edittext_inner"
+                android:background="@drawable/rounded_edittext"
                 android:cursorVisible="false"
                 android:enabled="false"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:padding="8dp"
                 android:text="Danushka Lakshan"
-                android:textColor="@color/whitetext" />
+                android:textColor="@color/whitetext"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
 
-            <!-- Email Label -->
+            <!-- Email -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="4dp"
                 android:text="E-mail"
                 android:textColor="#000000"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="12dp"/>
 
-            <!-- Email EditText -->
             <EditText
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/rounded_edittext_inner"
+                android:background="@drawable/rounded_edittext"
                 android:cursorVisible="false"
                 android:enabled="false"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:padding="8dp"
                 android:text="danushka3600@gmail.com"
-                android:textColor="@color/whitetext" />
+                android:textColor="@color/whitetext"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
         </LinearLayout>
 
+        <!-- Sign Out Button -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSignOut"
             android:layout_width="140dp"
             android:layout_height="44dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/btn_dark_rounded"
             android:text="Sign out"
             android:textColor="@color/whitetext" />
     </LinearLayout>
-
-    <!-- Sign out Button -->
 </LinearLayout>
