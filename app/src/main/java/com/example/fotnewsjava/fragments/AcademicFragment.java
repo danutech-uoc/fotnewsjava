@@ -1,5 +1,6 @@
 package com.example.fotnewsjava.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fotnewsjava.ArticleDetailActivity;
 import com.example.fotnewsjava.R;
 import com.example.fotnewsjava.adapters.ArticleAdapter;
 import com.example.fotnewsjava.models.Article;
@@ -74,17 +76,14 @@ public class AcademicFragment extends Fragment implements ArticleAdapter.OnReadM
 
     @Override
     public void onReadMoreClick(Article article) {
-        ArticleDetailFragment detailFragment = ArticleDetailFragment.newInstance(
-                article.getTitle(),
-                article.getDate(),
-                article.getSummary(), // Replace with full content if available
-                article.getImageUrl()  // Pass imageUrl instead of imageResId
-        );
+        // Create an Intent to start ArticleDetailActivity
+        Intent intent = new Intent(getContext(), ArticleDetailActivity.class);
+        intent.putExtra("title", article.getTitle());
+        intent.putExtra("date", article.getDate());
+        intent.putExtra("fullSummary", article.getFullSummary()); // Pass full summary
+        intent.putExtra("imageUrl", article.getImageUrl());
 
-        requireActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragmentContainer, detailFragment)
-                .addToBackStack(null)
-                .commit();
+        // Start the activity with the passed data
+        startActivity(intent);
     }
 }
